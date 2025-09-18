@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <!-- Logo + Title -->
+    <div class="sidebar-header">
+      <img src="logo.png" alt="Logo" class="sidebar-logo">
+      <h2 class="sidebar-title">SCHEDULE PRO</h2>
+    </div>
+
+    <a href="index.html" class="active"><i class="fas fa-compass"></i><span>Home</span></a>
+    <a href="dashboard.html"><i class="fas fa-gamepad"></i><span>Dashboard</span></a>
+    <a href="dailyquest.html"><i class="fas fa-flag-checkered"></i><span>Daily Quest</span></a>
+    <a href="badges.html"><i class="fas fa-medal"></i><span>Badges</span></a>
+    <a href="shop.html" class="active"><i class="fas fa-shop"></i><span>Shop</span></a>
+    
+  <!-- Sidebar Footer -->
+  <div class="sidebar-footer">
+    <p>© 2025 Schedule Pro</p>
+  </div>
+</div>
+
+  </div>
+
+  <!-- Main content -->
+  <div class="main-content" id="mainContent">
+<header>
+  <h1 class="gamified-header">
+    <i class="fa-solid fa-shield" style="margin-right:0px; color:#9a8cfc;"></i>
+    Welcome to Adventure!
+  </h1>
+</header>
+<div>
+</div>
+
+<!-- Container with text and image -->
+<div class="home-container">
+  <div class="home-text">
+    <h2>Schedule Pro</h2>
+    <p>Boost your productivity, master your time management, 
+      and stay motivated with Schedule Pro – a gamified task scheduling system that rewards your 
+      progress and makes achieving your goals fun and exciting!</p>
+
+      <!-- Social Media -->
+<div class="socials-feedback">
+  <p>Follow us on Social Media</p>
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+
+  <!-- Feedback Button -->
+  <button id="feedbackBtn">Send Feedback</button>
+</div>
+
+  </div>
+  <div class="home-image">
+    <img src="home.png" alt="Home Adventure">
+  </div>
+</div>
+
+<!-- Feedback Modal -->
+<div id="feedbackModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Send us your Feedback</h3>
+<form id="feedbackForm" action="https://formspree.io/f/movnonql" method="POST">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" placeholder="Your Feedback" rows="4" required></textarea>
+  <button type="submit">Submit</button>
+</form>
+  </div>
+</div>
+<!-- Gamified Confirmation Popup -->
+<div id="feedbackConfirm" class="feedback-confirm">
+  <div class="confirm-content">
+    <i class="fa-solid fa-gift" style="font-size:50px; color:#fff;"></i>
+    <h3>Thank you! 🎉</h3>
+    <p>Your feedback has been sent successfully.</p>
+    <button id="confirmClose">Close</button>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>

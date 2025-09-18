@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <img src="logo.png" alt="Logo" class="sidebar-logo">
+      <h2 class="sidebar-title">SCHEDULE PRO</h2>
+    </div>
+
+    <a href="index.html"><i class="fas fa-compass"></i><span>Home</span></a>
+    <a href="dashboard.html" class="active"><i class="fas fa-gamepad"></i><span>Dashboard</span></a>
+    <a href="dailyquest.html"><i class="fas fa-flag-checkered"></i><span>Daily Quest</span></a>
+    <a href="badges.html"><i class="fas fa-medal"></i><span>Badges</span></a>
+    <a href="shop.html"><i class="fas fa-shop"></i><span>Shop</span></a>
+      <!-- Sidebar Footer -->
+  <div class="sidebar-footer">
+    <p>© 2025 Schedule Pro</p>
+  </div>
+</div>
+
+  </div>
+
+  <!-- Main content -->
+  <div class="main-content" id="mainContent">
+    <header>
+      <h1 class="gamified-header">
+        <i class="fas fa-shield-alt" style="margin-right:0px; color:#9a8cfc;"></i>
+        Hello,Warrior!
+      </h1>
+    </header>
+
+      <p id="dateText" class="date-text"></p> <!-- 🔹 dito lalabas yung real-time date -->
+
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+      <!-- LEFT CONTAINER (Calendar) -->
+      <div class="left-container">
+        <i class="fas fa-calendar-alt"></i>
+        <h3 class="calendar-title">Calendar</h3>
+        <div class="calendar-header">
+          <button id="prevBtn">◀</button>
+          <span id="calendarHeader"></span>
+          <button id="nextBtn">▶</button>
+        </div>
+        <div class="calendar-grid" id="calendarGrid"></div>
+      </div>
+
+      <!-- RIGHT CONTAINER -->
+      <div class="right-container">
+        
+        <!-- NEW WRAPPER: XP + STREAK + BADGES -->
+        <div class="xp-streak-badges">
+<!-- XP PROGRESS BAR -->
+<div class="exp-container">
+  <div id="levelLabel">Level 1</div>
+  <div class="exp-bar">
+    <div id="expFill"></div>
+  </div>
+  <div id="expText">0 / 100 EXP</div>
+</div>
+
+
+
+
+          <!-- STREAK & BADGES SIDE BY SIDE -->
+          <div class="streak-badges-row">
+            <!-- STREAK CARD -->
+            <div class="card streak-card">
+              <i class="fas fa-fire"></i>
+              <h3>Streak</h3>
+              <p id="streakCount"></p>
+            </div>
+
+            <!-- BADGES CARD -->
+            <div class="card badges-card">
+              <i class="fas fa-medal"></i>
+              <h3>Total Badges</h3>
+              <p id="badgeCount"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- UPCOMING TASKS -->
+<div class="card">
+  <i class="fas fa-tasks"></i>
+  <h3>Upcoming Quest</h3>
+  <ul class="task-list" id="upcomingTasks">
+    <!-- Dynamic list ng quests ay dito lalagay via JS -->
+  </ul>
+</div>
+
+
+<!-- 📌 NEW: Task Summary (Finished vs Pending) -->
+<div class="task-summary">
+  <div class="card finished-card">
+    <i class="fas fa-check-circle"></i>
+    <h3>Total Quest Finished</h3>
+    <p id="finishedCount">0</p>
+  </div>
+  <div class="card pending-card">
+    <i class="fas fa-hourglass-half"></i>
+    <h3>Pending Quest</h3>
+    <p id="pendingCount">0</p>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

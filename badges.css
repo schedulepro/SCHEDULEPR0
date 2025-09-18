@@ -1,0 +1,266 @@
+/* =========================
+   📌 Main Content
+========================= */
+.main-content {
+  margin-left: 250px;
+  padding: 30px;
+  min-height: 100vh;
+  background-color: #e9e0ff;
+  box-sizing: border-box;
+}
+
+/* Header */
+.main-content header {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.gamified-header {
+  font-family: 'Bungee', cursive;
+  font-size: 40px;
+  color: #3d2e91;
+  text-align: center;
+  text-shadow: 0 0 3px #9a8cfc, 0 0 6px #e9e0ff;
+}
+
+.badge-description {
+  font-size: 18px;
+  color: rgba(61, 46, 145, 0.4); /* mas visible violet */
+  margin: -50px 0 20px 0; /* lapit sa header, may konting space sa baba */
+  text-align: left;
+  font-family: 'Fredoka One', cursive;
+  margin-left: 75px;
+}
+
+/* 🌟 Gamified H2 inside badge-category */
+.badge-category h2 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 26px;
+  text-align: center;
+  color: #3d2e91;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 16px;
+  border: 2px solid #9a8cfc;
+  background: rgba(255, 255, 255, 0.5); /* blend with main-content */
+  box-shadow: 0 3px 12px rgba(61,46,145,0.2);
+  display: inline-block; /* centers naturally inside parent */
+  backdrop-filter: blur(4px); /* subtle frosted effect */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.badge-category {
+  font-size: 24px;
+  font-family: 'Baloo 2', sans-serif;
+  color: #3d2e91;
+  margin: 30px auto 15px; /* auto = center horizontally */
+  text-align: center;
+  background: #fff;
+  padding: 8px 16px;
+  border: 3px solid #9a8cfc;
+  border-radius: 16px;
+  box-shadow: 0 3px 6px rgba(61,46,145,0.2);
+  width: 80%;
+  display: block; /* ensure block element para gumana centering */
+}
+
+
+/* =========================
+   🎖 Badge Grid Layout - Horizontal per Row
+========================= */
+/* 🎖 Badge Grid - mas aesthetic container */
+.badge-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* mas maluwag sa pagitan ng bawat row */
+  padding: 40px 20px; /* breathing space sa paligid */
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.4); /* semi-transparent bg */
+  backdrop-filter: blur(8px); /* glassmorphism feel */
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 25px rgba(61,46,145,0.15); 
+  margin-top: 20px;
+}
+
+/* 🎖 Badge Row - ayusin spacing */
+.badge-row {
+  display: flex;
+  flex-direction: row;
+  gap: 30px; /* mas maluwag bawat card */
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding: 20px; /* dagdag space sa loob ng row */
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.3); /* subtle bg per row */
+  box-shadow: 0 4px 15px rgba(61,46,145,0.1) inset; /* soft inner shadow */
+}
+
+
+
+/* =========================
+   🎴 Badge Cards - Daily Quest Style + Gamified
+========================= */
+.badge {
+  flex: 0 0 180px;          /* fixed width like Daily Quest card */
+  height: 220px;            /* fixed height for uniformity */
+  background-color: #ffffff; /* solid card for blending */
+  border-radius: 15px;
+  border: 2px solid #9a8cfc;
+  padding: 20px 10px;
+  text-align: center;
+  font-family: 'Baloo 2', cursive;
+  color: #3d2e91;
+  box-shadow: 0 4px 8px rgba(61,46,145,0.15); /* soft shadow like Daily Quest */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertical centering */
+  align-items: center;       /* horizontal centering */
+}
+
+/* Hover Effect */
+.badge:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(61,46,145,0.2);
+  background: linear-gradient(145deg, #f0ebff, #ffffff); /* subtle gamified effect */
+}
+
+/* Badge Icons */
+.badge i {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #9a8cfc;
+  text-shadow: 0 0 8px rgba(154,140,252,0.5);
+  transition: transform 0.3s ease;
+}
+
+.badge:hover i {
+  transform: scale(1.15) rotate(-10deg);
+}
+
+/* Badge Labels */
+.badge span {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Badge Description */
+.badge p {
+  font-size: 13px;
+  margin-top: 6px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Locked Badge */
+.badge.locked {
+  filter: grayscale(60%);
+  opacity: 0.6;
+}
+
+.badge.locked::after {
+  content: "🔒 Locked";
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #999;
+  font-weight: bold;
+}
+
+/* Unlocked Badge - subtle glow like Daily Quest */
+.badge.unlocked {
+  filter: none;
+  opacity: 1;
+  border: 2px solid gold;
+  box-shadow: 0 0 12px rgba(255,223,0,0.4);
+}
+
+/* Default background fill kapag unlocked */
+.badge-category:nth-of-type(1) .badge.unlocked { /* Starter */
+  background: linear-gradient(145deg, #f5f0ff, #e0d8ff);
+}
+.badge-category:nth-of-type(2) .badge.unlocked { /* Advance */
+  background: linear-gradient(145deg, #ffe5e5, #ffd0d0);
+}
+.badge-category:nth-of-type(3) .badge.unlocked { /* Intermediate */
+  background: linear-gradient(145deg, #ccfff0, #a8ffe0);
+}
+.badge-category:nth-of-type(4) .badge.unlocked { /* Pro */
+  background: linear-gradient(145deg, #fff2cc, #ffe599);
+}
+
+.badge.unlocked::after {
+  content: "✔ Unlocked!";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: gold;
+  color: black;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Hover Effect per Level - mas intense pag tinapat */
+.badge-category:nth-of-type(1) .badge.unlocked:hover { /* Starter */
+  background: linear-gradient(145deg, #e0d8ff, #c7baff);
+  box-shadow: 0 8px 25px rgba(154,140,252,0.5);
+}
+.badge-category:nth-of-type(2) .badge.unlocked:hover { /* Advance */
+  background: linear-gradient(145deg, #ffd0d0, #ffb3b3);
+  box-shadow: 0 8px 25px rgba(255,107,107,0.5);
+}
+.badge-category:nth-of-type(3) .badge.unlocked:hover { /* Intermediate */
+  background: linear-gradient(145deg, #a8ffe0, #7effd0);
+  box-shadow: 0 8px 25px rgba(29,209,161,0.5);
+}
+.badge-category:nth-of-type(4) .badge.unlocked:hover { /* Pro */
+  background: linear-gradient(145deg, #ffe599, #ffd966);
+  box-shadow: 0 8px 25px rgba(254,202,87,0.5);
+}
+
+/* Optional: icon also glow per level */
+.badge-category:nth-of-type(1) .badge:hover i { color: #7b6fe0; }
+.badge-category:nth-of-type(2) .badge:hover i { color: #e04c4c; }
+.badge-category:nth-of-type(3) .badge:hover i { color: #0fb489; }
+.badge-category:nth-of-type(4) .badge:hover i { color: #f2b900; }
+
+/* ✨ Unlock Pulse Animation */
+@keyframes unlockPulse {
+  0% { transform: scale(1); box-shadow: 0 0 10px gold; }
+  50% { transform: scale(1.15); box-shadow: 0 0 35px gold; }
+  100% { transform: scale(1); box-shadow: 0 0 10px gold; }
+}
+
+.badge.newly-unlocked {
+  animation: unlockPulse 1s ease forwards;
+}
+
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .badge-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .badge {
+    width: 140px;
+    height: 200px;
+  }
+}
+
+
+

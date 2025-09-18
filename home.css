@@ -1,0 +1,303 @@
+/* =========================
+   🌐 Import Gamified Font
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+/* =========================
+   Main Content
+========================= */
+.main-content {
+  margin-left: 250px;
+  padding: 30px;
+  min-height: 100vh;
+  background-color: #e9e0ff;
+  box-sizing: border-box;
+}
+
+/* Header */
+.main-content header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.gamified-header {
+  font-family: 'Bungee', cursive;
+  font-size: 40px;
+  color: #3d2e91;
+  text-align: center;
+  text-shadow: 0 0 3px #9a8cfc, 0 0 6px #e9e0ff;
+}
+
+/* =========================
+   Home Container
+========================= */
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 100px;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  margin-bottom: 50px;
+}
+
+/* Left text side */
+.home-text h2 {
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 40px;
+  color: #3d2e91;
+  margin-bottom: 20px;
+}
+
+.home-text p {
+  font-size: 20px;
+  color: #5a5a5a;
+  line-height: 1.8;
+  width: 80%;
+  font-style: italic; /* Italic / tagilid style */
+  margin-bottom: 30px; /* Space before socials */
+}
+
+/* Right image side */
+.home-image img {
+  width: 550px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   Socials & Feedback Button
+========================= */
+.socials-feedback {
+  margin-top: 50px;
+}
+
+.socials-feedback p {
+  font-size: 18px;
+  color: #3d2e91;
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  font-size: 20px;
+  color: #3d2e91;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #9a8cfc;
+}
+
+#feedbackBtn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #3d2e91;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#feedbackBtn:hover {
+  background-color: #9a8cfc;
+}
+
+/* =========================
+   🌟 Gamified Feedback Modal (Blended Theme)
+========================= */
+
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.65); /* slightly darker backdrop for focus */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: linear-gradient(145deg, #e9e0ff, #9a8cfc); /* soft purple gradient */
+  padding: 30px 25px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  transform: scale(0.8);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  font-family: 'Fredoka One', cursive;
+  color: #3d2e91;
+  border: 3px solid #fff;
+}
+
+.modal.show .modal-content {
+  transform: scale(1);
+  opacity: 1;
+  animation: popIn 0.4s ease forwards;
+}
+
+.modal.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal.hide .modal-content {
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+/* =========================
+   Form Inputs & Textarea
+========================= */
+.modal-content form input,
+.modal-content form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 15px;
+  border: 2px solid #9a8cfc;
+  border-radius: 15px;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #fffafc;
+}
+
+.modal-content form input:focus,
+.modal-content form textarea:focus {
+  border-color: #3d2e91;
+  box-shadow: 0 0 10px #9a8cfc;
+}
+
+/* =========================
+   Submit Button
+========================= */
+.modal-content form button {
+  width: 100%;
+  background: linear-gradient(90deg, #3d2e91, #9a8cfc);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+.modal-content form button:hover {
+  background: linear-gradient(90deg, #9a8cfc, #e9e0ff);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* =========================
+   Close Button
+========================= */
+.modal .close {
+  color: #fff;
+  float: right;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 0 0 6px #3d2e91, 0 0 10px #9a8cfc;
+  transition: transform 0.2s ease;
+}
+
+.modal .close:hover {
+  transform: rotate(20deg) scale(1.2);
+}
+
+/* =========================
+   Animations
+========================= */
+@keyframes popIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  70% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* =========================
+   Gamified Confirmation Popup
+========================= */
+.feedback-confirm {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.feedback-confirm.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.confirm-content {
+  background: linear-gradient(135deg, #fd79a8, #6c5ce7);
+  padding: 40px 35px;
+  border-radius: 25px;
+  text-align: center;
+  color: #fff;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transform: scale(0.8);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  font-family: 'Fredoka One', cursive;
+}
+
+.feedback-confirm.show .confirm-content {
+  transform: scale(1);
+  animation: popIn 0.4s ease forwards;
+}
+
+.confirm-content h3 {
+  font-size: 28px;
+  margin: 15px 0;
+}
+
+.confirm-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.confirm-content button {
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 20px;
+  border: none;
+  background: #fff;
+  color: #6c5ce7;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.confirm-content button:hover {
+  background: #ffeaa7;
+  transform: scale(1.05);
+}

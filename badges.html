@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Badges</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="badges.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="logo.png">
+
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <img src="logo.png" alt="Logo" class="sidebar-logo">
+    <h2 class="sidebar-title">SCHEDULE PRO</h2>
+  </div>
+
+  <a href="index.html"><i class="fas fa-compass"></i><span>Home</span></a>
+  <a href="dashboard.html"><i class="fas fa-gamepad"></i><span>Dashboard</span></a>
+  <a href="dailyquest.html"><i class="fas fa-flag-checkered"></i><span>Daily Quest</span></a>
+  <a href="badges.html" class="active"><i class="fas fa-medal"></i><span>Badges</span></a>
+  <a href="shop.html"><i class="fas fa-shop"></i><span>Shop</span></a>
+
+  <!-- Sidebar Footer -->
+  <div class="sidebar-footer">
+    <p>© 2025 Schedule Pro</p>
+  </div>
+</div>
+
+
+  <!-- Main content -->
+  <div class="main-content" id="mainContent">
+    <header>
+      <h1 class="gamified-header">
+        <i class="fas fa-trophy" style="margin-right:10px; color:#9a8cfc;"></i>
+        Badges
+      </h1>
+    </header>
+
+    <p class="badge-description">Badges You’ve Earned</p>
+
+
+    <!-- =========================
+         Starter Badges
+    ========================== -->
+    <section class="badge-category">
+      <h2>⭐ Starter Badges</h2>
+      <div class="badge-row">
+        <div class="badge locked" data-badge="onTimeFinisher">
+          <i class="fas fa-hourglass-start"></i>
+          <span>On Time Finisher</span>
+          <p>Complete 1 quest on time</p>
+          <div class="progress">0/1</div>
+        </div>
+        <div class="badge locked" data-badge="beatTheClock">
+          <i class="fas fa-bolt"></i>
+          <span>Beat The Clock</span>
+          <p>Finish 1 quest an hour early</p>
+          <div class="progress">0/1</div>
+        </div>
+        <div class="badge locked" data-badge="dailyCompleter">
+          <i class="fas fa-calendar-day"></i>
+          <span>Daily Completer</span>
+          <p>Complete all quests today</p>
+          <div class="progress">0/0</div>
+        </div>
+        <div class="badge locked" data-badge="deadlineCrusher">
+          <i class="fas fa-stopwatch"></i>
+          <span>Deadline Crusher</span>
+          <p>Finish 5 quests early</p>
+          <div class="progress">0/5</div>
+        </div>
+        <div class="badge locked" data-badge="taskMaster">
+          <i class="fas fa-tasks"></i>
+          <span>Task Master</span>
+          <p>Complete 10 quests</p>
+          <div class="progress">0/10</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         Advance Badges
+    ========================== -->
+    <section class="badge-category">
+      <h2>🔥 Advance Badges</h2>
+      <div class="badge-row">
+        <div class="badge locked" data-badge="focused">
+          <i class="fas fa-bullseye"></i>
+          <span>Focused</span>
+          <p>3-day streak</p>
+          <div class="progress">0/3</div>
+        </div>
+        <div class="badge locked" data-badge="consistent">
+          <i class="fas fa-sync-alt"></i>
+          <span>Consistent</span>
+          <p>7-day streak</p>
+          <div class="progress">0/7</div>
+        </div>
+        <div class="badge locked" data-badge="organizer">
+          <i class="fas fa-folder-open"></i>
+          <span>Organizer</span>
+          <p>5 categories of quests</p>
+          <div class="progress">0/5</div>
+        </div>
+        <div class="badge locked" data-badge="earlyStarter">
+          <i class="fas fa-sun"></i>
+          <span>Early Starter</span>
+          <p>Complete a quest before 8AM</p>
+          <div class="progress">0/1</div>
+        </div>
+        <div class="badge locked" data-badge="legendaryScheduler">
+          <i class="fas fa-gem"></i>
+          <span>Legendary Scheduler</span>
+          <p>Unlock all 9 badges</p>
+          <div class="progress">0/9</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         Intermediate Badges
+    ========================== -->
+    <section class="badge-category">
+      <h2>💎 Intermediate Badges</h2>
+      <div class="badge-row">
+        <div class="badge locked" data-badge="midLevelFinisher">
+          <i class="fas fa-hourglass-half"></i>
+          <span>Mid-Level Finisher</span>
+          <p>Complete 15 quests</p>
+          <div class="progress">0/15</div>
+        </div>
+        <div class="badge locked" data-badge="speedRunner">
+          <i class="fas fa-tachometer-alt"></i>
+          <span>Speed Runner</span>
+          <p>Finish 5 quests an hour early</p>
+          <div class="progress">0/5</div>
+        </div>
+        <div class="badge locked" data-badge="weekStreak">
+          <i class="fas fa-calendar-week"></i>
+          <span>Week Streak</span>
+          <p>Complete all quests for 1 week</p>
+          <div class="progress">0/7</div>
+        </div>
+        <div class="badge locked" data-badge="categoryChampion">
+          <i class="fas fa-medal"></i>
+          <span>Category Champion</span>
+          <p>Complete 10 categories of quests</p>
+          <div class="progress">0/10</div>
+        </div>
+        <div class="badge locked" data-badge="earlyBird">
+          <i class="fas fa-clock"></i>
+          <span>Early Bird</span>
+          <p>Finish 10 quests before 8AM</p>
+          <div class="progress">0/10</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         Pro Badges
+    ========================== -->
+    <section class="badge-category">
+      <h2>🏆 Pro Badges</h2>
+      <div class="badge-row">
+        <div class="badge locked" data-badge="questMaster">
+          <i class="fas fa-chess-queen"></i>
+          <span>Quest Master</span>
+          <p>Complete 50 quests</p>
+          <div class="progress">0/50</div>
+        </div>
+        <div class="badge locked" data-badge="timeWizard">
+          <i class="fas fa-hourglass-end"></i>
+          <span>Time Wizard</span>
+          <p>Finish 20 quests an hour early</p>
+          <div class="progress">0/20</div>
+        </div>
+        <div class="badge locked" data-badge="monthStreak">
+          <i class="fas fa-calendar-alt"></i>
+          <span>Month Streak</span>
+          <p>Complete all quests for 1 month</p>
+          <div class="progress">0/30</div>
+        </div>
+        <div class="badge locked" data-badge="legendaryOrganizer">
+          <i class="fas fa-crown"></i>
+          <span>Legendary Organizer</span>
+          <p>Complete all categories of quests</p>
+          <div class="progress">0/10</div>
+        </div>
+        <div class="badge locked" data-badge="ultimateScheduler">
+          <i class="fas fa-star"></i>
+          <span>Ultimate Scheduler</span>
+          <p>Unlock all badges in the system</p>
+          <div class="progress">0/20</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="badges.js"></script>
+</body>
+</html>

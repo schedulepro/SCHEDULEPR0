@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Quest</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dailyquest.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/confirmDate/confirmDate.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <!-- Logo + Title -->
+  <div class="sidebar-header">
+    <img src="logo.png" alt="Logo" class="sidebar-logo">
+    <h2 class="sidebar-title">SCHEDULE PRO</h2>
+  </div>
+
+  <a href="home.html"><i class="fas fa-compass"></i><span>Home</span></a>
+  <a href="dashboard.html"><i class="fas fa-gamepad"></i><span>Dashboard</span></a>
+  <a href="dailyquest.html" class="active"><i class="fas fa-flag-checkered"></i><span>Daily Quest</span></a>
+  <a href="badges.html"><i class="fas fa-medal"></i><span>Badges</span></a>
+  <a href="shop.html"><i class="fas fa-shop"></i><span>Shop</span></a>
+
+  <!-- Sidebar Footer -->
+  <div class="sidebar-footer">
+    <p>© 2025 Schedule Pro</p>
+  </div>
+</div>
+
+
+  </div>
+
+  <!-- Main content -->
+  <div class="main-content" id="mainContent">
+    <header>
+      <h1 class="gamified-header">
+        <i class="fas fa-flag-checkered" style="color:#9a8cfc;"></i>
+        Daily Quest
+      </h1>
+    </header>
+
+        <p class="quest-description">Add a quest to earn EXP and coins.</p>
+
+    <!-- Top Cards (Add + Completed) -->
+    <div class="quest-cards">
+      <!-- Add Quest Card -->
+      <div class="quest-card">
+        <h2><i class="fas fa-plus-circle" style="color:#9a8cfc; margin-right:8px;"></i> Add Quest</h2>
+        <form class="quest-form" id="taskForm">
+
+          <!-- First Row (Quest Label, Due Date, Category) -->
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" id="questLabel" placeholder=" " required>
+              <label for="questLabel">Quest Label</label>
+            </div>
+
+<div class="form-group">
+  <input 
+    type="text" 
+    id="dueDate" 
+    placeholder=" " 
+    readonly 
+    required 
+    class="flatpickr"
+    data-enable-time="true"
+    data-time_24hr="false"
+    data-date-format="Y-m-d h:i K"
+    data-alt-input="true"
+    data-alt-format="F j, Y h:i K"
+  >
+  <label for="dueDate">Set Due Date & Time</label>
+</div>
+
+
+            <div class="form-group">
+              <input type="text" id="category" placeholder=" " required>
+              <label for="category">Category</label>
+            </div>
+          </div>
+
+          <!-- Second Row (Additional Notes + Difficulty) -->
+          <div class="form-row">
+            <!-- Notes -->
+            <div class="form-group wide">
+              <textarea id="notes" rows="3" placeholder=" "></textarea>
+              <label for="notes">Additional Notes</label>
+            </div>
+
+            <!-- Difficulty -->
+            <div class="form-group">
+              <select id="difficulty" required>
+                <option value="" disabled selected hidden></option>
+                <option>Easy</option>
+                <option>Medium</option>
+                <option>Hard</option>
+                <option>Expert</option>
+              </select>
+              <label for="difficulty">Difficulty Level</label>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="submit-btn">
+            <i class="fa-solid fa-plus"></i> Add Quest
+          </button>
+        </form>
+      </div>
+
+      <!-- Completed Quest Card -->
+      <div class="quest-card">
+        <h2><i class="fas fa-trophy" style="color:#9a8cfc; margin-right:8px;"></i> Completed Quest</h2>
+        <ul id="completedList"></ul>
+      </div>
+    </div>
+
+<!-- Quest List (Separate Row, nasa ibaba) -->
+<div class="quest-cards">
+  <div class="quest-card quest-list">
+    <h2><i class="fas fa-scroll" style="color:#9a8cfc; margin-right:8px;"></i> Quest List</h2>
+    
+    <!-- Search / Filter Input -->
+<div style="display: flex; justify-content: center; margin-bottom: 10px;">
+    <input type="text" id="searchQuest" placeholder="Search quests..." 
+           style="padding:6px 10px; width:20%; border:2px solid #9a8cfc; border-radius:8px;">
+</div>
+    
+    <!-- Table -->
+    <div class="table-container">
+      <table id="questTable">
+        <thead>
+          <tr>
+            <th>Label</th>
+            <th>Due Date</th>
+            <th>Category</th>
+            <th>Difficulty</th>
+            <th>Additional Notes</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dynamic rows will appear here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Motivational Pop-up -->
+<div id="motivationPopup" class="motivation-popup">
+  <p id="motivationMessage"></p>
+  <p id="rewardMessage"></p> <!-- dito lalabas yung exp at coins -->
+  <button id="closeMotivation">OK</button>
+</div>
+
+
+<!-- Confetti canvas -->
+<canvas id="confettiCanvas"></canvas>
+
+<div id="notification" class="notification"></div>
+
+  <div id="badgeUnlockPopup" class="badge-unlock-popup">
+    <div class="popup-content">
+      <i class="fas fa-medal"></i>
+      <h3>New Badge Unlocked!</h3>
+      <p id="badgeUnlockMessage"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="dailyquest.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/confirmDate/confirmDate.js"></script>
+
+</body>
+</html>

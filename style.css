@@ -1,0 +1,160 @@
+/* =========================
+   🌐 Root Variables
+========================= */
+:root {
+  --sidebar-width: 250px;
+  --sidebar-bg: #9a8cfc;           /* base violet background */
+  --sidebar-text: rgba(255, 255, 255, 0.85); /* soft white text, para mag-blend sa violet */
+  --sidebar-hover: #b8a9ff;        /* hover highlight */
+  --sidebar-active: #7f6df0;       /* active link */
+  --sidebar-glow: #cbbdff;         /* glow effect for hover/active */
+  --transition-speed: 0.25s;       /* smooth transition speed */
+  --icon-bounce-speed: 0.6s;       /* speed for icon bounce animation */
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   🌐 Import Gamified Font
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   🌐 Global Reset
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* =========================
+   🌐 Sidebar Styles
+========================= */
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.sidebar-logo {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.sidebar-title {
+  color: rgba(255, 255, 255, 0.856); /* semi-transparent white, soft sa violet bg */
+  font-size: 27px;
+  font-weight: 400;
+  text-align: center;
+  font-family: 'Press Start 2P', monospace;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-shadow: 
+    1px 1px 2px rgba(140,111,191,0.7),   /* lilim ng violet */
+    2px 2px 4px rgba(176,140,255,0.5),   /* light violet highlight */
+    3px 3px 6px rgba(224,195,255,0.4);   /* soft glow */
+  transition: color var(--transition-speed) ease, text-shadow var(--transition-speed) ease;
+  cursor: default;
+  animation: titleGlow 2s infinite alternate; /* subtle pulsing glow */
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100%;
+  background-color: var(--sidebar-bg);
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  transition: all var(--transition-speed) ease;
+  border-right: 2px solid #b8a9ff;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.856); /* semi-transparent white, soft sa violet bg */
+  text-shadow: 0 0 2px #b8a9ff, 0 0 4px #9a8cfc; /* subtle glow na nag-blend sa background */
+  padding: 15px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'Press Start 2P', monospace; /* pixel / gamified style */
+  position: relative;
+  margin-bottom: 5px;
+  min-height: 42px;
+  
+transition: 
+  background-color 0.25s ease-in-out,
+  color 0.25s ease-in-out,
+  transform 0.25s ease-out,
+  text-shadow 0.35s ease-in-out;
+}
+
+/* Hover Effect */
+.sidebar a:hover {
+  background-color: #b8a9ff;
+  color: rgba(245, 243, 255, 0.95);
+  transform: scale(1.02);
+  text-shadow: 0 0 3px #cbbdff, 0 0 6px #b8a9ff, 0 0 10px #9a8cfc;
+}
+
+.sidebar a.active {
+  background-color: #7f6df0;
+  color: rgba(255, 255, 255, 0.85);
+  transform: scale(1.025);
+}
+
+/* Hover on Active Link */
+.sidebar a.active:hover {
+  transform: scale(1.025);
+}
+
+/* Icon Styles */
+.sidebar a i {
+  font-size: 18px;
+  min-width: 18px;
+  text-align: center;
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* Hover / Active Effect */
+.sidebar a:hover i,
+.sidebar a.active i {
+  transform: rotate(20deg) scale(1.15);
+  animation: iconBounce 0.6s ease-in-out;
+}
+
+/* Icon Bounce Animation */
+@keyframes iconBounce {
+  0%   { transform: rotate(20deg) scale(1.15); }
+  25%  { transform: rotate(15deg) scale(1.12); }
+  50%  { transform: rotate(25deg) scale(1.18); }
+  75%  { transform: rotate(18deg) scale(1.14); }
+  100% { transform: rotate(20deg) scale(1.15); }
+}
+
+/* Sidebar footer */
+.sidebar-footer {
+  margin-top: auto;
+  padding: 15px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.623);
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
